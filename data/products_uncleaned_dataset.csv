@@ -1,0 +1,101 @@
+product_id,product_name,product_stock,price
+1,Wireless Mouse,50,599
+2,Keyboard,30,899
+3,Laptop Stand,20,1299
+4,USB Cable,150,199
+5,Monitor,15,8999
+6,Webcam,25,2499
+7,External Hard Drive,12,5499
+8,Pen Drive,80,499
+9,Mouse Pad,200,149
+10,Gaming Keyboard,10,3499
+11,Headphones,45,1999
+12,Bluetooth Speaker,18,2799
+13, ,60,299
+14,Smart Watch,22,3999
+15,Phone Charger,90,349
+16,HDMI Cable,75,299
+17,Laptop Bag,40,1199
+18,Desk Lamp,33,899
+19,Notebook,120,79
+20,Office Chair,8,6999
+21,Gaming Mouse,-5,1299
+22,Wireless Keyboard,28,1499
+23,USB Hub,36,699
+24,Tablet Stand,44,549
+25,Router,19,2499
+26,Router,19,2499
+27,Printer,11,7999
+28,Scanner,7,6599
+29,Graphics Tablet,5,4999
+30,Smartphone Holder,66,199
+31,Memory Card,140,799
+32,Laptop Cooler,23,999
+33,Power Bank,31,1599
+34,Tripod Stand,16,1299
+35,Projector,6,12999
+36,LED Strip Light,55,499
+37,Mechanical Keyboard,14,4599
+38,Wireless Earbuds,27,3499
+39,Charging Dock,20,899
+40,Gaming Chair,4,12999
+41,Stylus Pen,37,599
+42,Smart Plug,42,899
+43,VR Headset,3,25999
+44,Portable SSD,9,8999
+45,Microphone,13,1899
+46,Soundbar,8,6999
+47,Digital Camera,5,45999
+48,Action Camera,7,18999
+49,Drone,2,55999
+50,Laptop Sleeve,60,699
+51,Desk Organizer,73,349
+52,Cable Manager,120,149
+53,Monitor Stand,21,1299
+54,Graphics Card,3,49999
+55,CPU Cooler,14,2799
+56,Thermal Paste,100,299
+57,Power Supply,9,4599
+58,PC Cabinet,6,3999
+59,RAM 8GB,25,2999
+60,RAM 16GB,18,5599
+61,Motherboard,7,8999
+62,SSD 1TB,11,7499
+63,SSD 512GB,20,4999
+64,Hard Disk 2TB,15,5799
+65,Keyboard Cover,90,99
+66,Mouse Bungee,33,499
+67,Monitor Arm,12,3499
+68,USB Fan,48,399
+69,Laptop Battery,,3499
+70,Screen Cleaner,75,199
+71,Keyboard Brush,110,79
+72,Mini Vacuum Cleaner,26,1299
+73,Wireless Adapter,17,699
+74,LAN Cable,200,149
+75,Network Switch,8,2899
+76,Smart Bulb,32,799
+77,Smart Bulb,32,799
+78,Smart Bulb,32,799
+79,Gaming Desk,4,8999
+80,Desk Mat,51,599
+81,Ergonomic Mouse,22,1599
+82,Trackpad,10,3499
+83,Portable Monitor,6,14999
+84,Laptop Docking Station,8,8999
+85,USB C Adapter,47,499
+86,Wireless Charger,35,1199
+87,Fast Charger,65,899
+88,Charging Cable,130,199
+89,Camera Lens,3,25999
+90,Camera Bag,15,1899
+91,Gimbal Stabilizer,5,11999
+92,LED Ring Light,20,999
+93,Green Screen,7,1499
+94,Streaming Deck,9,8999
+95,Game Controller,18,3999
+96,Retro Gamepad,23,1299
+97,Arcade Stick,6,6999
+98,Touch Pen,40,invalid
+99,Tablet Case,33,899
+100,Portable Projector,4,not_available
