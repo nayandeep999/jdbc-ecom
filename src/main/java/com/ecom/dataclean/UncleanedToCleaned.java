@@ -81,7 +81,8 @@ public class UncleanedToCleaned {
 			ps = connect.prepareStatement(validProd);
 
 			// this line of code is reading csv file..
-			CSVReader read = new CSVReader(new FileReader("E:\\products.csv"));
+			CSVReader read = new CSVReader(new FileReader(
+					"D:\\Eclipse-Workplace\\E-commerceJDBCProject\\data\\products_uncleaned_dataset.csv"));
 
 			connect.setAutoCommit(false);
 

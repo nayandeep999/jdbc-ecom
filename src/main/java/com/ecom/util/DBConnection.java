@@ -6,33 +6,30 @@ import java.sql.SQLException;
 
 public class DBConnection {
 
-    
-    private static final String URL = "jdbc:mysql://localhost:3306/ecommerce_db";
-    private static final String USERNAME = "root";
-    private static final String PASSWORD = "mysql@121212";
+	private static final String URL = "jdbc:mysql://localhost:3306/ecommerce_db";
+	private static final String USERNAME = "root";
+	private static final String PASSWORD = "0000";
 
-    
-    public static Connection getConnection() {
+	public static Connection getConnection() {
 
-        Connection connection = null;
+		Connection connection = null;
 
-        try {
-            
-            Class.forName("com.mysql.cj.jdbc.Driver");
+		try {
 
-           
-            connection = DriverManager.getConnection(URL, USERNAME, PASSWORD);
+			Class.forName("com.mysql.cj.jdbc.Driver");
 
-           // System.out.println("Database connected successfully");
+			connection = DriverManager.getConnection(URL, USERNAME, PASSWORD);
 
-        } catch (ClassNotFoundException e) {
-            System.out.println("JDBC Driver not found");
-            e.printStackTrace();
-        } catch (SQLException e) {
-            System.out.println("Connection failed");
-            e.printStackTrace();
-        }
+			// System.out.println("Database connected successfully");
 
-        return connection;
-    }
+		} catch (ClassNotFoundException e) {
+			System.out.println("JDBC Driver not found");
+			e.printStackTrace();
+		} catch (SQLException e) {
+			System.out.println("Connection failed");
+			e.printStackTrace();
+		}
+
+		return connection;
+	}
 }
