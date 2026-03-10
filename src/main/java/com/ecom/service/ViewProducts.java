@@ -5,15 +5,24 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
 import com.ecom.util.DBConnection;
 
 public class ViewProducts {
+
+	private static final Logger logger = LogManager.getLogger(ViewProducts.class);
 
 	public void showAllProducts() {
 		Connection con = DBConnection.getConnection();
 		String query = "Select * from products order by prod_name ";
 		PreparedStatement ps = null;
+
 		try {
+
+			logger.info("Fetching all products from database");
+
 			ps = con.prepareStatement(query);
 
 			ResultSet rs = ps.executeQuery();
@@ -33,7 +42,7 @@ public class ViewProducts {
 			}
 		} catch (SQLException e) {
 
-			e.printStackTrace();
+			logger.error("error fetching products", e);
 		} finally {
 			try {
 				if (ps != null) {
@@ -44,9 +53,9 @@ public class ViewProducts {
 				}
 			} catch (Exception e) {
 				// will change later
-				System.out.println(e.getMessage());
+				logger.error("error closing connection", e);
 			}
 		}
 	}
-	
+
 }
