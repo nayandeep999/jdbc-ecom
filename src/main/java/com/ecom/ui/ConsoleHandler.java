@@ -2,6 +2,9 @@ package com.ecom.ui;
 
 import java.util.Scanner;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
 import com.ecom.service.CartService;
 import com.ecom.service.CheckOutService;
 import com.ecom.service.OrderService;
@@ -9,81 +12,108 @@ import com.ecom.service.ViewProducts;
 
 public class ConsoleHandler {
 
-    static Scanner sc = new Scanner(System.in);
+	private static final Logger logger = LogManager.getLogger(ConsoleHandler.class);
+	static Scanner sc = new Scanner(System.in);
 
-    public static void showUI() {
+	public static void showUI() {
 
-        CartService cartService = new CartService();
-        ViewProducts viewProducts = new ViewProducts();
+		CartService cartService = new CartService();
+		ViewProducts viewProducts = new ViewProducts();
 
-        while (true) {
+		while (true) {
 
-            System.out.println("\n========= E-COMMERCE MENU =========");
-            System.out.println("1. View Products");
-            System.out.println("2. Add Product To Cart");
-            System.out.println("3. Remove Product From Cart");
-            System.out.println("4. View Cart Items");
-            System.out.println("5. Checkout");
-            System.out.println("6. Order History");
-            System.out.println("7. Exit");
+			System.out.println("\n========= E-COMMERCE MENU =========");
+			System.out.println("1. View Products");
+			System.out.println("2. Add Product To Cart");
+			System.out.println("3. Remove Product From Cart");
+			System.out.println("4. View Cart Items");
+			System.out.println("5. Checkout");
+			System.out.println("6. Order History");
+			System.out.println("7. Exit");
 
-            System.out.print("Enter choice: ");
-            int choice = sc.nextInt();
+			System.out.print("Enter choice: ");
 
-            switch (choice) {
+			int choice = sc.nextInt();
 
-            case 1:
-                viewProducts.showAllProducts();
-                break;
+			switch (choice) {
 
-            case 2:
-                CartService cs = new CartService();
+			case 1:
 
-            		System.out.print("Enter Product Name: ");
-                String prodName = sc.next();
-                
-                cs.getProductIdByName(prodName);
-                
-                System.out.print("\nEnter Product ID: ");
-                String prodId = sc.next();
-                
+				logger.info("User selected: View Products");
+				viewProducts.showAllProducts();
+				break;
 
-                System.out.print("Enter Quantity: ");
-                int qty = sc.nextInt();
+			case 2:
 
-                cs.addToCart(prodId, qty);
+				System.out.print("Enter Product Name: ");
+				String prodName = sc.next();
 
-                break;
+				cartService.getProductIdByName(prodName);
 
-            case 3:
-                System.out.print("Enter Product ID to remove: ");
-                String removeId = sc.next();
+				System.out.print("\nEnter Product ID: ");
+				String prodId = sc.next();
 
-                cartService.removefromCart(removeId);
-              //  System.out.println("Product removed from cart.");
-                break;
+				System.out.print("Enter Quantity: ");
+				int qty = sc.nextInt();
 
-            case 4:
-                CartService.viewCartItems();
-                break;
+				logger.info("User adding product {} with quantity {}", prodId, qty);
 
-            case 5:
-                CheckOutService.checkOut();
-                System.out.println("Order placed successfully.");
-                break;
-             
-            case 6:
-                OrderService.viewOrderHistory();
-                break;
-            case 7:
-                System.out.println("Thank you for shopping with us!!!");
-                System.exit(0);
+				cartService.addToCart(prodId, qty);
 
-            default:
-                System.out.println("Invalid choice.");
-            }
-        }
-    }
+				break;
 
+			case 3:
 
+				System.out.print("Enter Product ID to remove: ");
+				String removeId = sc.next();
+
+				logger.info("User attempting to remove product {} from cart", removeId);
+
+				cartService.removefromCart(removeId);
+
+				break;
+
+			case 4:
+
+				logger.info("User viewing cart items");
+
+				CartService.viewCartItems();
+
+				break;
+
+			case 5:
+
+				logger.info("User initiated checkout");
+
+				CheckOutService.checkOut();
+
+				System.out.println("Order placed successfully.");
+
+				break;
+
+			case 6:
+
+				logger.info("User viewing order history");
+
+				OrderService.viewOrderHistory();
+
+				break;
+
+			case 7:
+
+				logger.info("User exited the application");
+
+				System.out.println("Thank you for shopping with us!!!");
+
+				sc.close();
+				System.exit(0);
+
+			default:
+
+				logger.warn("Invalid menu choice entered: {}", choice);
+
+				System.out.println("Invalid choice.");
+			}
+		}
+	}
 }
