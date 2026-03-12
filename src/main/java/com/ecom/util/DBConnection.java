@@ -4,7 +4,12 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
 public class DBConnection {
+
+	private static final Logger logger = LogManager.getLogger(DBConnection.class);
 
 	private static final String URL = "jdbc:mysql://localhost:3306/ecommerce_db";
 	private static final String USERNAME = "root";
@@ -20,14 +25,15 @@ public class DBConnection {
 
 			connection = DriverManager.getConnection(URL, USERNAME, PASSWORD);
 
-			// System.out.println("Database connected successfully");
+			logger.info("Database connection established");
 
 		} catch (ClassNotFoundException e) {
-			System.out.println("JDBC Driver not found");
-			e.printStackTrace();
+
+			logger.error("MySQL JDBC Driver not found", e);
+
 		} catch (SQLException e) {
-			System.out.println("Connection failed");
-			e.printStackTrace();
+
+			logger.error("Database connection failed", e);
 		}
 
 		return connection;
