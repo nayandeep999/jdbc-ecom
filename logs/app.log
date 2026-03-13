@@ -1,0 +1,14 @@
+2026-03-16 20:58:05 INFO  com.ecom.ui.ConsoleHandler - User viewing cart items
+2026-03-16 20:58:05 INFO  com.ecom.util.DBConnection - Database connection established
+2026-03-16 20:58:05 INFO  com.ecom.service.CartService - Total Billing Amount: 0.0
+2026-03-16 20:58:20 INFO  com.ecom.util.DBConnection - Database connection established
+2026-03-16 20:58:20 INFO  com.ecom.service.CartService - Searching products starting with name: ds
+2026-03-16 20:58:20 INFO  com.ecom.service.CartService - No products found with name starting with: ds
+2026-03-16 20:58:24 INFO  com.ecom.ui.ConsoleHandler - User adding product 1qq with quantity 1
+2026-03-16 20:58:24 INFO  com.ecom.util.DBConnection - Database connection established
+2026-03-16 20:58:24 ERROR com.ecom.service.CartService - Cart validation failed for product 1qq
+com.ecom.customexception.InvalidProductIdException: Invalid product id
+	at com.ecom.service.CartService.ifProductExistInCartWithQty(CartService.java:265)
+	at com.ecom.service.CartService.addToCart(CartService.java:138)
+	at com.ecom.ui.ConsoleHandler.showUI(ConsoleHandler.java:61)
+	at com.ecom.main.Main.main(Main.java:20)

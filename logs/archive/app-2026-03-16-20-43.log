@@ -1,0 +1,8 @@
+2026-03-16 20:43:01 INFO  com.ecom.service.CartService - Searching products starting with name: s
+2026-03-16 20:43:14 INFO  com.ecom.ui.ConsoleHandler - User adding product pr76 with quantity 800
+2026-03-16 20:43:14 ERROR com.ecom.service.CartService - Stock validation failed for product pr76
+com.ecom.customexception.UnavailableStocksException: Not enough quantity available
+	at com.ecom.service.CartService.checkProdQty(CartService.java:100)
+	at com.ecom.service.CartService.addToCart(CartService.java:171)
+	at com.ecom.ui.ConsoleHandler.showUI(ConsoleHandler.java:61)
+	at com.ecom.main.Main.main(Main.java:20)

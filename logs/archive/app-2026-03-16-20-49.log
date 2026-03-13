@@ -1,0 +1,6 @@
+2026-03-16 20:49:23 INFO  com.ecom.main.Main - ======================================================
+2026-03-16 20:49:23 INFO  com.ecom.main.Main -              WELCOME TO E-COMMERCE SYSTEM             
+2026-03-16 20:49:23 INFO  com.ecom.main.Main - ======================================================
+2026-03-16 20:49:23 INFO  com.ecom.main.Main - Browse products, manage your cart and place orders.
+2026-03-16 20:49:44 INFO  com.ecom.ui.ConsoleHandler - User selected: View Products
+2026-03-16 20:49:45 INFO  com.ecom.service.ViewProducts - Fetching all products from database

@@ -1,0 +1,14 @@
+2026-03-16 20:39:18 INFO  com.ecom.main.Main - ======================================================
+2026-03-16 20:39:18 INFO  com.ecom.main.Main -              WELCOME TO E-COMMERCE SYSTEM             
+2026-03-16 20:39:18 INFO  com.ecom.main.Main - ======================================================
+2026-03-16 20:39:18 INFO  com.ecom.main.Main - Browse products, manage your cart and place orders.
+2026-03-16 20:39:22 INFO  com.ecom.ui.ConsoleHandler - User selected: View Products
+2026-03-16 20:39:35 INFO  com.ecom.service.CartService - Searching products starting with name: af
+2026-03-16 20:39:35 INFO  com.ecom.service.CartService - No products found with name starting with: af
+2026-03-16 20:39:46 INFO  com.ecom.ui.ConsoleHandler - User adding product aa with quantity 11
+2026-03-16 20:39:46 ERROR com.ecom.service.CartService - Cart validation failed for product aa
+com.ecom.customexception.InvalidProductIdException: Invalid product id
+	at com.ecom.service.CartService.ifProductExistInCartWithQty(CartService.java:265)
+	at com.ecom.service.CartService.addToCart(CartService.java:138)
+	at com.ecom.ui.ConsoleHandler.showUI(ConsoleHandler.java:61)
+	at com.ecom.main.Main.main(Main.java:20)
